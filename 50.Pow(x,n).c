@@ -1,0 +1,15 @@
+C Code Solution-
+
+double myPow(double x, int n) {
+
+    double ans=1;
+    if(n==0)
+    {
+        return 1;//Base Condition
+    }
+    if(n<0)
+    {
+        return 1/myPow(x,-n);//For negetive power
+    }
+    return x*myPow(x,n-1);//For positive power recursive call
+}
