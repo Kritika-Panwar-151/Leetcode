@@ -1,0 +1,49 @@
+
+struct ListNode* deleteMiddle(struct ListNode* head) 
+{   
+    //Floyd’s Tortoise–Hare approach
+    if(head==NULL ||head->next==NULL)
+    {
+        free(head);
+        return NULL;
+    }
+    struct ListNode* slow=head;
+    struct ListNode* fast=head;
+    struct ListNode* prev=NULL;
+
+    while(fast!=NULL && fast->next!=NULL)
+    {
+        prev=slow;
+        slow=slow->next;
+        fast=fast->next->next;
+    }
+    prev->next=slow->next;
+    free(slow);
+    return head;
+
+    /*
+    if(head==NULL || head->next==NULL)
+    {
+        free(head);
+        return NULL:
+    }
+    int count=0;
+    struct ListNode* temp=head;
+    struct ListNode* prev=head;
+    while(temp!=NULL)
+    {
+        count+=1;
+        temp=temp->next;
+    }
+    
+    count=count/2;
+    for(int i=0;i<count-1;i++)
+    {
+        prev=prev->next;
+    }
+    prev->next=prev->next->next;
+    return head;
+    */
+       
+}
+    
