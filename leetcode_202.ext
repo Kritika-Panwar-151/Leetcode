@@ -1,0 +1,55 @@
+1)
+class Solution {
+    public boolean isHappy(int n) 
+    {
+        if(n==1 || n==7)
+        {
+            return true;
+        }
+        else if (n<10)
+        {
+            return false;
+        }
+        int d;
+        int s=0;
+        while(n!=0)
+        {
+            d=n%10;
+            s+=Math.pow(d,2);
+            n=n/10;
+        }
+        return isHappy(s);
+    }
+}
+
+2)
+class Solution {
+    public boolean isHappy(int n) 
+    {
+        //FLOYDS CYCLE
+        int slow=n;
+        int fast=n;
+        do
+        {
+            slow=sSum(slow);
+            fast=sSum(sSum(fast));
+            if(fast==1)
+            {
+                return true;
+            }
+        }while(slow!=fast);
+        return slow==1;
+        
+    }
+    public int sSum(int n)
+        {
+            int s=0;
+            int d;
+            while(n!=0)
+            {
+                d=n%10;
+                s+=(d*d);
+                n=n/10;
+            }return s;
+        }
+}
