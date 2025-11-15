@@ -1,0 +1,65 @@
+1)Selection Sort(Iterative)
+class Solution {
+    public int[] sortArray(int[] nums) 
+    {
+        for(int i=0;i<nums.length;i++)
+        {
+            int s=nums[i];
+            int pos=i;
+            for(int j=i+1;j<nums.length;j++)
+            {
+                if(nums[j]<nums[pos])
+                {
+                    pos=j;
+                }
+            }
+            int temp=nums[i];
+            nums[i]=nums[pos];
+            nums[pos]=temp;
+        }
+        return nums;
+    }
+}
+
+2)Bubble Sort(Iterative)
+class Solution {
+    public int[] sortArray(int[] nums) 
+    {
+        for(int j=0;j<nums.length;j++)
+        {
+            for(int i=0;i<nums.length-1-j;i++)
+            {
+                if(nums[i]>nums[i+1])
+                {
+                    int temp=nums[i];
+                    nums[i]=nums[i+1];
+                    nums[i+1]=temp;
+                }
+            }
+        }
+        return nums;
+    }
+}
+
+3)Insertion sort(iterative)
+class Solution {
+    public int[] sortArray(int[] nums) 
+    {
+        for(int i=0;i<nums.length;i++)
+        {
+            for(int j=0;j<i;j++)
+            {
+                if(nums[i]<nums[j])
+                {
+                    int temp=nums[i];
+                    for(int k=i;k>j;k--)
+                    {
+                        nums[k]=nums[k-1];
+                    }
+                    nums[j]=temp;
+                }
+            }
+        }
+        return nums;
+    }
+}
