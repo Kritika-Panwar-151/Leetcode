@@ -1,0 +1,94 @@
+struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) 
+{
+    /*
+    
+    struct ListNode* temp=l1;
+    long n1=0;
+    int c=1;
+    while(temp!=NULL)
+    {
+        n1=(temp->val)*c+n1;
+        c=c*10;
+        temp=temp->next;
+    }
+    temp=l2;
+    long n2=0;
+    c=1;
+    while(temp!=NULL)
+    {
+        n2=(temp->val)*c+n2;
+        c=c*10;
+        temp=temp->next;
+    }
+    long n=n1+n2;
+    if(n==0)
+    {
+        struct ListNode* f=(struct ListNode*)malloc(sizeof(struct ListNode));
+        f->val=0;
+        f->next=NULL;
+        return f;
+    }
+    int d;
+    struct ListNode* head=NULL;
+    temp=NULL;
+    while(n!=0)
+    {
+        d=n%10;
+        n=n/10;
+        struct ListNode* f=(struct ListNode*)malloc(sizeof(struct ListNode));
+        f->val=d;
+        f->next=NULL;
+        if(head==NULL)
+        {
+            head=f;
+            
+        }
+        else
+        {
+            temp->next=f;
+        }
+        temp=f;
+    }
+    
+    return head;
+    */
+    struct ListNode* head = NULL;
+    struct ListNode* temp = NULL;
+
+    int carry = 0;
+
+    while (l1 != NULL || l2 != NULL || carry != 0)
+    {
+        int sum = carry;
+
+        if (l1 != NULL) 
+        {
+            sum += l1->val;
+            l1 = l1->next;
+        }
+        if (l2 != NULL) 
+        {
+            sum += l2->val;
+            l2 = l2->next;
+        }
+
+        carry = sum / 10;
+
+        struct ListNode* node = malloc(sizeof(struct ListNode));
+        node->val = sum % 10;
+        node->next = NULL;
+
+        if (head == NULL)
+        {
+            head = node;
+        }
+        else
+        {
+            temp->next = node;
+        }
+        temp = node;
+    }
+
+    return head;
+
+}
