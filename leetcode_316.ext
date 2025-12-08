@@ -1,0 +1,21 @@
+
+char* removeDuplicateLetters(char* s) {
+    int n = strlen(s);
+    char *stack=(char *)malloc(n+1);
+    int p=-1;
+    int used[256]={0};
+    int last[256]={0};
+    for(int i=0;i<n;i++) last[s[i]]=i;
+
+    for(int i=0;i<n;i++)
+    {
+        if(used[s[i]]) continue;
+        while(p>=0 && stack[p]>s[i] && last[stack[p]]>i) used[stack[p--]]=0;
+        stack[++p]=s[i];
+        used[s[i]]=1;
+    }
+    stack[++p]='\0';
+    return stack;
+    
+}
+
