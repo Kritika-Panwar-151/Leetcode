@@ -28,7 +28,7 @@ This naming makes it easy to:
 - Search problems by LeetCode number
 - Track progress systematically
 
----
+
 
 ## Topics Covered So Far
 
@@ -63,7 +63,7 @@ This naming makes it easy to:
 - Recursive thinking
 - Base case handling
 
----
+
 
 ## Learning Goals
 - Improve logical thinking and coding skills
@@ -72,21 +72,21 @@ This naming makes it easy to:
 - Prepare for technical interviews
 - Build consistency in DSA practice
 
----
+
 
 ## Tools & Platform
 - **Language Used**: As per learning requirement (Java / C /Python)
 - **Platform**: LeetCode
 - **Editor**: Visual Studio Code
 
----
+
 
 ## Progress Tracking
 - Problems are added regularly as new topics are learned
 - Difficulty ranges from **Easy → Medium**
 - Focus is on concept clarity rather than only optimization
 
----
+
 
 ## Future Plans
 - Add detailed comments to each solution
@@ -95,14 +95,14 @@ This naming makes it easy to:
 - Add time & space complexity analysis
 - Include Medium and Hard level problems
 
----
+
 
 ## Author
 **Kritika Panwar**  
 B.E. Computer Science & Engineering  
 BMS College of Engineering  
 
----
+
 
 ## Note
 This repository is for **learning and practice purposes**.  
